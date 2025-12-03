@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Garagem Solidária</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #2b6cb0;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 12px;
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1e4e80;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>Garagem Solidária</header>
+
+<div class="container">
+
+    <h3>Entrar</h3>
+
+    <input type="text" id="morador" placeholder="Seu nome ou apartamento" />
+    <button onclick="entrar()">Entrar</button>
+
+</div>
+
+<script>
+function entrar() {
+    const nome = document.getElementById("morador").value.trim();
+
+    if (!nome) {
+        alert("Digite seu nome ou apartamento.");
+        return;
+    }
+
+    localStorage.setItem("morador", nome);
+    window.location.href = "menu.html";
+}
+</script>
+
+</body>
+</html>
